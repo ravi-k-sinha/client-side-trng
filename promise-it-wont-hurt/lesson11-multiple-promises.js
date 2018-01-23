@@ -1,0 +1,31 @@
+function all(promise1, promise2) {
+    
+
+    var promise = new Promise(function(fulfill, reject) {
+        var counter = 0;
+        var out = [];
+
+        promise1.then(function(val) {
+            out[0] = val;
+            counter++;
+
+            if (counter >= 2) {
+                fulfill(out);
+            }
+        });
+
+        promise2.then(function(val) {
+            out[1] = val;
+            counter++;
+
+            if (counter >= 2) {
+                fulfill(out);
+            }
+        });
+
+    });
+
+    return promise;
+}
+
+all(getPromise1(), getPromise2()).then(console.log);
