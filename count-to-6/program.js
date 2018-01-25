@@ -118,6 +118,7 @@ console.log(html`<b>${process.argv[2]} says</b>: "${process.argv[3]}"`);
 
 //   return combined;
 // }
+*/
 
 function html(pieces, ...substitutions) {
     var result = pieces[0];
@@ -134,4 +135,3 @@ function escape(s) {
             .replace(/'/g, "&apos;")
             .replace(/"/g, "&quot;");
 }
-*/
